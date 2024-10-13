@@ -96,9 +96,9 @@ export default function BoardsWithPosts() {
     <div>
       {boards.length === 0 && <p>No boards available for this user.</p>}
       {boards.map((board) => (
-        <div key={board.id} className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">{board.name}</h2>
-          <p className="text-gray-600 mb-4">{board.description}</p>
+        <div key={board.id} className="mb-4">
+          <h2 className="text-2xl font-bold mb-2">{board.name}</h2>
+          <p className="text-gray-600 mb-2">{board.description}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {board.posts.length === 0 ? (
