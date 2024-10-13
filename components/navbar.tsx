@@ -10,12 +10,15 @@ export default async function NavBar() {
 
   return (
     <nav className="bg-[#32006e] p-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div
+        className={`container mx-auto flex ${user ? "" : "justify-between"} items-center`}
+      >
         <Link href="/" className="text-white text-2xl font-bold">
           BoardWalk
         </Link>
+
         {!user && (
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 pl-4">
             <Link
               href="/sign-in"
               className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
@@ -27,6 +30,23 @@ export default async function NavBar() {
               className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
             >
               Sign Up
+            </Link>
+          </div>
+        )}
+
+        {user && (
+          <div className="flex space-x-4">
+            <Link
+              href="/user-profile"
+              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
+            >
+              User Profile
+            </Link>
+            <Link
+              href="boards"
+              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
+            >
+              Boards
             </Link>
           </div>
         )}
