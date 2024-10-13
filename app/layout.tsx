@@ -26,13 +26,13 @@ export default function RootLayout({
             </Link>
             <div className="flex space-x-4">
               <Link
-                href="/signin"
+                href="/sign-in"
                 className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
               >
                 Sign In
               </Link>
               <Link
-                href="/signup"
+                href="/sign-up"
                 className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
               >
                 Sign Up
