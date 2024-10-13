@@ -24,17 +24,17 @@ export default function RootLayout({
         <nav className="bg-[#32006e] p-4">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="text-white text-2xl font-bold">
-              ProjectSync
+              BoardWalk
             </Link>
             <div className="flex space-x-4">
               <Link
-                href="/signin"
+                href="/sign-in"
                 className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
               >
                 Sign In
               </Link>
               <Link
-                href="/signup"
+                href="/sign-up"
                 className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
               >
                 Sign Up
