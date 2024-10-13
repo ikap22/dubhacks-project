@@ -41,26 +41,26 @@ export default function Board() {
   if (loading) return <div>Loading...</div>;
   return (
     <div>
-      <h1>Boards with Posts:</h1>
+      <h1 className="text-3xl font-semibold mt-4"> Active Projects</h1>
       <ul>
         {boards.map((board) => (
-          <li key={board.id}>
-            <h2 className="font-bold">{board.name}</h2>
+          <li key={board.id} className="mr-10 mb-10 mt-10 border-2 rounded-md p-6">
+            <h2 className="font-bold text-3xl">{board.name}</h2>
             <p>{board.description}</p>
             <small>
               Created at: {new Date(board.created_at).toLocaleString()}
             </small>
-            <h3>Posts:</h3>
+            <h3 className="font-semibold underline text-2xl mb-2 mt-2">What&apos;s going on with this project?</h3>
             <ul>
               {console.log(board.posts)}
               {board.posts.length > 0 ? (
                 board.posts.map((post: any) => (
                   <li key={post.id}>
-                    <strong>{post.title}</strong>
+                    <strong className="italic text-xl">{post.title}</strong>
                     <p>{post.content}</p>
-                    <small>
+                    <div>
                       Posted on: {new Date(post.created_at).toLocaleString()}
-                    </small>
+                    </div>
                   </li>
                 ))
               ) : (
