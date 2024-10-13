@@ -1,3 +1,4 @@
+import React from "react";
 import { signUpAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
 import { SubmitButton } from "@/components/submit-button";
@@ -28,6 +29,14 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
         <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
           <Label htmlFor="email">Email</Label>
           <Input name="email" placeholder="you@example.com" required />
+          
+          <Label htmlFor="first_name">First Name</Label>
+
+          <Input name="first_name" placeholder="Your first name" required />
+
+          <Label htmlFor="last_name">Last Name</Label>
+          <Input name="last_name" placeholder="Your last name" required />
+
           <Label htmlFor="password">Password</Label>
           <Input
             type="password"
