@@ -1,6 +1,16 @@
 import React from 'react'
+import { supabase } from '@/utils/supabaseConfig';
+import { redirect } from "next/navigation";
 
-export default function page() {
+export default async function page() {
+   const {
+     data: { user },
+   } = await supabase.auth.getUser();
+
+   if (!user) {
+     return redirect("/sign-in");
+   }
+   
   return (
     <div className='h-full w-full'>
       <section className='pt-2 pb-8'>
