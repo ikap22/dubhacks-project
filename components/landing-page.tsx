@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const LandingPage = () => {
   return (

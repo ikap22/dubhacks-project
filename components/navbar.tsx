@@ -1,10 +1,7 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { supabase } from "@/utils/supabaseConfig";
 import NavButton from "./nav-button";
-import { motion } from "framer-motion";
 
 export default async function NavBar() {
   const {
@@ -12,12 +9,7 @@ export default async function NavBar() {
   } = await supabase.auth.getUser();
 
   return (
-    <motion.nav
-      className="z-[5] relative h-[10vh] bg-[#32006e] flex items-center"
-      initial={{ opacity: 0, y: "-10vh" }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeIn" }}
-    >
+    <nav className="z-[5] relative h-[10vh] bg-[#32006e] flex items-center">
       <div
         className={`container mx-auto flex ${user ? "" : "justify-between"} items-center`}
       >
@@ -63,6 +55,6 @@ export default async function NavBar() {
           </div>
         )}
       </div>
-    </motion.nav>
+    </nav>
   );
 }

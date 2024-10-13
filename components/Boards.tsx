@@ -38,6 +38,8 @@ export default function Board() {
           )
         `);
 
+      console.log(data, error);
+
       if (error) {
         console.error("Error fetching data:", error.message);
         setError(error.message);
@@ -63,7 +65,9 @@ export default function Board() {
   return (
     <div>
       <div className="justify-center">
-        <h1 className="text-3xl font-semibold mt-4 text-center">Active Projects Open to Collaboration</h1>
+        <h1 className="text-3xl font-semibold mt-4 text-center">
+          Active Projects Open to Collaboration
+        </h1>
       </div>
       <ul>
         {boards.map((board) => (
