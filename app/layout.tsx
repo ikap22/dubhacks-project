@@ -1,6 +1,7 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Link from "next/link";
+import NavBar from "@/components/navbar";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -19,27 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-gray-100 text-gray-900">
-        <nav className="bg-[#32006e] p-4">
-          <div className="container mx-auto flex justify-between items-center">
-            <Link href="/" className="text-white text-2xl font-bold">
-              BoardWalk
-            </Link>
-            <div className="flex space-x-4">
-              <Link
-                href="/sign-in"
-                className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/sign-up"
-                className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-              >
-                Sign Up
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <NavBar />
         <div className="container mx-auto p-4">{children}</div>
       </body>
     </html>
