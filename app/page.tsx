@@ -11,11 +11,6 @@ export default async function Index() {
         Sign in to post or join an active project
       </div>
       <div>
-        <LucideLink size={32}>
-          <Button>
-            <Link href="/sign-in" />
-          </Button>
-        </LucideLink>
       </div>
     </main>
   );

@@ -35,7 +35,7 @@ export default async function NavBar() {
         )}
 
         {user && (
-          <div className="flex space-x-4 ml-4">
+          <div className="flex space-x-4 ml-4 ">
             <Link
               href="/user-profile"
               className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"

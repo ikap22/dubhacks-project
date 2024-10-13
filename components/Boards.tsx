@@ -63,7 +63,7 @@ export default function Board() {
   return (
     <div>
       <div className="justify-center">
-        <h1 className="text-3xl font-semibold mt-4 text-center">Active Projects</h1>
+        <h1 className="text-3xl font-semibold mt-4 text-center">Active Projects Open to Collaboration</h1>
       </div>
       <ul>
         {boards.map((board) => (
