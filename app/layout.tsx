@@ -19,9 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="bg-gray-100 text-gray-900">
+      <body className="bg-neutral-100 text-gray-900">
         <NavBar />
-        <div className="container mx-auto p-4">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );

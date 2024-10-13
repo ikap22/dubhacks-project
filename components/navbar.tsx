@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { supabase } from "@/utils/supabaseConfig";
-import { redirect } from "next/navigation";
+import NavButton from "./nav-button";
 
 export default async function NavBar() {
   const {
@@ -9,45 +9,49 @@ export default async function NavBar() {
   } = await supabase.auth.getUser();
 
   return (
-    <nav className="bg-[#32006e] p-4">
+    <nav className="z-[5] relative h-[10vh] bg-[#32006e] flex items-center">
       <div
         className={`container mx-auto flex ${user ? "" : "justify-between"} items-center`}
       >
-        <Link href="/" className="text-white text-2xl font-bold">
+        <Link href="/" className="text-neutral-100 text-4xl font-semibold">
           BoardWalk
         </Link>
 
         {!user && (
           <div className="flex space-x-4">
-            <Link
-              href="/sign-in"
-              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/sign-up"
-              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-            >
-              Sign Up
-            </Link>
+            <NavButton
+              content={"Sign In"}
+              href={"/sign-in"}
+              className={
+                "bg-white text-black font-semibold py-2 px-4 rounded hover:bg-gray-200 transition"
+              }
+            />
+            <NavButton
+              content={"Sign Up"}
+              href={"/sign-up"}
+              className={
+                "bg-white text-black font-semibold py-2 px-4 rounded hover:bg-gray-200 transition"
+              }
+            />
           </div>
         )}
 
         {user && (
           <div className="flex space-x-4 ml-4">
-            <Link
-              href="/user-profile"
-              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-            >
-              User Profile
-            </Link>
-            <Link
-              href="boards"
-              className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
-            >
-              Boards
-            </Link>
+            <NavButton
+              content={"User Profile"}
+              href={"/user-profile"}
+              className={
+                "bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
+              }
+            />
+            <NavButton
+              content={"Boards"}
+              href={"boards"}
+              className={
+                "bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition"
+              }
+            />
           </div>
         )}
       </div>
